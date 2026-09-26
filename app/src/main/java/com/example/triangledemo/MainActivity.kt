@@ -45,3 +45,12 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+
+fun checkValue(text: String): Double? {
+    val x = text.trim().replace(',', '.').toDoubleOrNull()
+    if (x == null || x <= 0.0) {
+        return null
+    }
+    return x
+}
+
