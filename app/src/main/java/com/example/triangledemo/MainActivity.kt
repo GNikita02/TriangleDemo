@@ -75,3 +75,12 @@ fun fromArea(area: Double): TriangleElements {
     return TriangleElements(leg, hypotenuse, area)
 }
 
+fun solve(letter: String, value: Double): TriangleElements? {
+    return when (letter) {
+        "к" -> fromLeg(value)
+        "г" -> fromHypotenuse(value)
+        "п" -> fromArea(value)
+        else -> null
+    }
+}
+
