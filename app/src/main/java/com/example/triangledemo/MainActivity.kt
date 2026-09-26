@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.triangledemo.ui.theme.TriangleDemoTheme
+import kotlin.math.sqrt
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,5 +53,13 @@ fun checkValue(text: String): Double? {
         return null
     }
     return x
+}
+
+data class TriangleElements(val leg: Double, val hypotenuse: Double, val area: Double)
+
+fun fromLeg(leg: Double): TriangleElements {
+    val hypotenuse = leg * sqrt(2.0)
+    val area = leg * leg / 2.0
+    return TriangleElements(leg, hypotenuse, area)
 }
 
