@@ -63,3 +63,9 @@ fun fromLeg(leg: Double): TriangleElements {
     return TriangleElements(leg, hypotenuse, area)
 }
 
+fun fromHypotenuse(hypotenuse: Double): TriangleElements {
+    val leg = hypotenuse / sqrt(2.0)
+    val area = leg * leg / 2.0
+    return TriangleElements(leg, hypotenuse, area)
+}
+
